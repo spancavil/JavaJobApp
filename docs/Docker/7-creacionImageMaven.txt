@@ -1,0 +1,13 @@
+./mvnw => maven wrapper script. Es un script para ejecutar comandos.
+spring-boot:build-image  => crear imagen usando Cloud Native Buildpacks. Primero se crea el JAR file
+y luego se crea la imagen
+-Dspring-boot.build-image.imageName=<IMAGE-NAME> => Java property pasada al comando. El -D es para definir
+una system property.
+
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=<IMAGE-NAME>"
+
+Luego se puede pushear (antes loggearme a docker)
+
+docker login
+
+docker push spancavil/<IMAGE-NAME>

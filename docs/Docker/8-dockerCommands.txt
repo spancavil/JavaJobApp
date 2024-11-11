@@ -1,0 +1,34 @@
+docker pull <IMAGE>
+docker push <username/image>
+
+-it interactive -d dettach -p mappear un port del container en la port en la host machine
+
+docker run -it -d -p <HOST-PORT>:<CONTAINER-PORT> --name <NAME> <IMAGE>
+
+docker stop <container-id/container-name>
+
+docker start <container-id/container-name>
+
+remove container
+docker rm <container-id/container-name>
+
+remove image
+docker rm <image-id/image-name>
+
+Running container -a all the containers (stopped y running)
+docker ps
+
+Listar las imágenes
+docker images
+
+Ejecutar en un running container de manera interactiva el command bash
+docker exec -it <container-name/container-id> bash
+
+Buildear una image desde el dockerfile. Ojo con el "." que especifica el current directory.
+docker build -t <username/image> .
+
+Get the logs del container
+docker logs <container-name/container-id>
+
+Get detailed information
+docker inspect <container-name/container-id>

@@ -1,0 +1,5 @@
+Sirve para monitorear y manejar la app.
+Da insights de lo que está pasando en la app. Podríamos generar un dashboard también con los EP que brinda.
+Tiene built-in endpoints, que obviamente hay que habilitar mediante application.properties.
+Se pueden ver métricas en tiempo real.
+Es completamente customizable, mediante application.properties

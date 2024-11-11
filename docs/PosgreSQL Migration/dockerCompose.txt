@@ -1,0 +1,17 @@
+Cuando hay muchos containers y necesitamos ejecutar muchos comandos referidos a estos containers
+vemos que es difícil gestionarlos y que los comandos son muy largos.
+
+Entonces entra en juego una herramienta llamada Docker Compose, donde nosotros definimos básicamente
+un archivo yaml para ejecutar varios servicios a la vez y no tengo que andar copiando y pegando comandos.
+Ya lo tengo todo unificado en un único archivo.
+
+-d para dettach mode
+docker-compose up -d
+
+docker-compose up <nombre-del-servicio-especifico>
+
+CTRL C para parar
+
+También para ver los logs:
+
+docker logs <nombre-del-container>

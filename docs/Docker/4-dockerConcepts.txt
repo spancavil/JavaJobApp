@@ -1,0 +1,25 @@
+Images
+Son los templates o blueprints que definen los container y las dependencias que contienen.
+
+Containers
+Son entornos de ejecución creados desde las imágenes.
+
+Dockerfile
+Contiene las instrucciones para generar la image. Las dependencies, los bins, etc.
+
+DockerHub
+Es como npm de las images.
+
+Docker Registry
+Es un storage y distribución para las docker images. Podemos etiquetar y versionar las images.
+Importancia del registry
+Tenemos un recurso centralizado y es fácil compartir las docker images.
+
+Otro datazo super importante
+Podemos correr la DB que queramos SIN TENER que instalar la DB en si misma.
+Con solo descargar la imagen y correrla mediante un container, ya está.
+
+El docker registry que utiliza por default la docker CLI es docker hub.
+Despues está Amazon ECR (elastic container registry)
+Google tiene un Artifact Registry
+Microsoft => Azure Container Registry

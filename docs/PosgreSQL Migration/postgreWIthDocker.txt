@@ -1,0 +1,56 @@
+Docker Networks
+Permite la comunicación entre distintos containers. Vamos a crear dos images, que darán
+lugar a dos containers que la idea es que se intercomuniquen.
+
+Creamos postgres db image
+docker run -d --name postgredb -e POSTGRES_PASSWORD=KskH%snC44js postgres
+
+Creamos pgAdmin image
+-e es para setear variables de entorno
+docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=KskH%snC44js dpage/pgadmin4
+
+Inicialmente este comando dará error, porque no hay conexión entre ambos.
+docker exec -it pgadmin ping postgredb
+
+Borramos entonces los containers creados porque no hay conexión, y necesitamos generar una conexión
+docker rm -f postgredb pgadmin
+
+Creamos una network
+docker network create my-network
+
+Corremos el mismo comando para crear el container, con la diferencia que ahora se conecta a la network
+docker run -d --name postgredb --network my-network -e POSTGRES_PASSWORD=KskH%snC44js postgres
+
+Y lo mismo para PGAdmin
+docker run -d --name pgadmin --network my-network -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=KskH%snC44js dpage/pgadmin4
+
+Ahora sí funciona el ping entre pgadmin y la db
+docker exec -it pgadmin ping postgredb
+
+FULL SET OF COMMANDS
+
+-e PGDATA: especifica el directorio donde estará la data.
+-v montará un volumen del container de postgres que apuntará a /data/postgres, para persistir estos datos.
+
+
+docker run -d \
+    --name postgres_container \
+    -e POSTGRES_USER=spancavil \
+    -e POSTGRES_PASSWORD=KskH%snC44js \
+    -e PGDATA=/data/postgres \
+    -v postgres:/data/postgres \
+    -p 5432:5432 \
+    --network postgres \
+    --restart unless-stopped \
+    postgres
+
+docker run -d \
+    --name pgadmin_container \
+    -e PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org \
+    -e PGADMIN_DEFAULT_PASSWORD=admin \
+    -e PGADMIN_CONFIG_SERVER_MODE=False \
+    -v pgadmin:/var/lib/pgadmin \
+    -p 5050:80 \
+    --network postgres \
+    --restart unless-stopped \
+    dpage/pgadmin4

@@ -1,0 +1,27 @@
+Tenemos el siguiente plugin:
+spring-boot-maven-plugin
+Este plugin under the hood utiliza Cloud Native Buildpacks que lo que hace es analizar el proyecto
+y crear un Dockerfile acorde a las dependencias que necesitamos.
+Entonces nosotros no tenemos que crear el dockerfile, porque esta plugin lo genera por nosotros.
+
+Layering
+Cloud Native Buildpacks utiliza el layering para crear los diversos procesos de la docker image.
+Por ejemplo:
+Una capa puede ser para generar el JVM,
+otra capa para las dependencias
+y la última capa para la app en sí mismo.
+
+Caching
+Todas las capas están cacheadas, entonces si creamos docker images una y otra vez por cambios en el código,
+las capas están cacheadas. O sea que no hay que esperar que carguen, porque ya están cacheadas.
+Esto acelera el proceso.
+
+Paketo Buildpacks
+Son especificaciones de Cloud Native Buildpacks espefications. Proveen de la JVM y otras herramientas
+necesarias para crear la image
+
+VENTAJAS
+No hay necesidad de Dockerfile.
+Entorno consistente.
+Seguridad. (se mantienen las dependencias actualizadas)
+Layering y eficiencia. (se crean images muy rápidamente ante cualquier cambio)

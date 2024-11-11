@@ -1,0 +1,14 @@
+Es un estilo de arquitectura donde una app es una collection de servicios autónomos independendientes.
+La intercomunicación es importante porque trabajand como un todo estos microservicios.
+
+Principios
+
+1. Single responsability. Cada MS tiene una única función.
+2. Independencia. Cada servicio es independiente uno del otro.
+3. Descentralización.
+4. Aislación de fallas. Cuando falla un microservicio, los demás siguen funcionando.
+5. La codebase de cada MS es más pequeña que la de un monolito y facilita mucho que se puedan realizar cambios
+y mejora la autonomía.
+
+Caso de estudio: Netflix
+

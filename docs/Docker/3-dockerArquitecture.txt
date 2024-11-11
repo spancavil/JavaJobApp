@@ -1,0 +1,10 @@
+Host OS (Linux)
+
+Contiene el docker engine (Docker Daemon - Docker API - Docker CLI)
+
+el user coloca los comandos en el CLI - la API interpreta esos comandos y los pasa al Daemon.
+
+Luego existen images (que están almacenadas dentro del Docker Registry) que son como blueprints
+para generar diversos containers.
+
+Los containers son las instancias de las docker images.

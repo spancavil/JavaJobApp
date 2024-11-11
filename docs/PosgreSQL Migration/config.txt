@@ -1,0 +1,3 @@
+En application.properties
+
+cambiamos los parámetros de conexión con la db

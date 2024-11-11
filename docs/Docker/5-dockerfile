@@ -1,0 +1,11 @@
+
+#The base image that includes all libraries and binaries for java runtinme environment
+FROM openjdk:11
+
+#Volume with the name temp
+VOLUME /tmp
+ADD target/my-app.jar my-app.jar
+EXPOSE 8080
+
+#When the container start, run the command java -jar /my-app.jar
+ENTRYPOINT ["java", "-jar", "/my-app.jar"]

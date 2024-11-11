@@ -1,0 +1,16 @@
+Problemas de arq monolítica
+. Dificultad de implementar cambios, dado que un pequeño cambio resulta en un redeploy de la app entera.
+. Falta de escalabilidad. Pongamos un ejemplo: estamos en black friday y las ventas se disparan al infinito
+y más allá, entonces si estamos en una app monolítica necesitaríamos escalar la app ENTERA para que surta efecto.
+Sin embargo esto no es lo mejor en términos de eficiencia / costo.
+Entonces si estamos hablando de microservicios podemos escalar el módulo único de "payments" por ejemplo y esto
+es mucho mejor en términos de costo y eficiencia.
+. Compromiso a largo plazo con un único stack tecnológico. Por ejemplo, para apps monolíticas lo que ocurre es
+que si creció mucho la app y por ejemplo hay que realizar una migración tecnológica hacia otro stack nuevo,
+no es para nada conveniente porque habría que revisar toda la app de manera íntegra y conviene más quedarse
+con el stack antiguo.
+. La complejidad de la app va escalando y en términos de una app monolítica puede no ser beneficioso.
+. Slower performance para apps demasiado grandes.
+. Large project sizes.
+. Alto deployment para small changes.
+. Team collaboration y autonomía.

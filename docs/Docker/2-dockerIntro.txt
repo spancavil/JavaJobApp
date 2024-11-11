@@ -1,0 +1,40 @@
+Qué es docker y para qué sirve?
+
+Intro
+Cuando estamos trabajando con muchos devs, es habitual que cada dev tenga un entorno de desarrollo diferente
+hablando de manera local. De esta manera podría suceder que un proyecto con ciertas dependencias funcionen
+correctamente en el entorno del "dev1", pero cuando el "dev2" trata de ejecutarlo localmente se topa con
+algunos errores. Estos errores pueden venir de su entorno local, por ejemplo quizás esté ejecutando una
+versión de node diferente, o tenga algunos problemas de configuración.
+
+Acá entra docker
+Docker entonces mete en un container a la app con sus respectivas dependencias y ADEMAS ya tiene todo
+configurado correctamente (entorno de ejecución, configuraciones adicionales, envs, etc)
+Entonces lo unico que tienen que hacer los devs es crear los containers y les va a funcionar
+a todos por igual.
+
+Analogía
+Son como "entornos controlados", en lugar de hacer experimentos en casa, que cada casa puede fallar.
+Tenemos el experimento y además viene con un laboratorio especial donde realizar ese experimento.
+
+Definicion
+Automatiza el deploy, escalado y manejo de aplicaciones utilizando este concepto de containerización.
+Y estos containers son portables y cualquier sistema puede correrlo. Asegura consistencia y que funcione
+en la máquina de todos, independientemente de los entornos locales de cada dev.
+
+Componentes
+Source code - runtime - libraries - system tools
+
+Virtual machines
+Las VM actuán como computadoras dentro de las computadores. Es una emulación de una compu, actúa como una
+computadora separada.
+Tiene un Guest OS, las librerías y binarios y la app a utilizar.
+Por otro lado las VMs son creadas por software de virtualización, por ejemplo con programas
+como virtual box.
+Permiten una manera flexible y escalabe de utilizar los recursos
+
+En cambio en Docker
+Tenemos Docker Engine (al contrario del HyperVisor de las VM).
+El container contiene SOLO la app y la librerías/binarios. NO contiene un Guest OS.
+Es MUY liviano a diferencia de las VMs, porque no tiene el guest OS, sino solamente las librerías y binarios
+para hacer que la app funciones.
